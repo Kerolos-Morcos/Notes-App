@@ -1,6 +1,6 @@
 # notes_app
 
-A new Flutter project.
+My tenth Flutter project in my learning process.
 
 ## Getting Started
 
