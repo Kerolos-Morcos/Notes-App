@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_app_bar.dart';
 
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
@@ -11,26 +12,9 @@ class _NotesViewState extends State<NotesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Notes',
-          style: TextStyle(fontSize: 25),
-        ),
-        actions: [
-          IconButton(
-            tooltip: 'Search A Note',
-            onPressed: () {},
-            icon: Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade800,
-                  borderRadius: const BorderRadius.all(Radius.circular(50))),
-              child: const Icon(
-                Icons.search,
-              ),
-            ),
-          ),
-        ],
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(56),
+        child: CustomAppBar(),
       ),
       body: Container(),
       floatingActionButton: FloatingActionButton(
@@ -44,3 +28,5 @@ class _NotesViewState extends State<NotesView> {
     );
   }
 }
+
+
