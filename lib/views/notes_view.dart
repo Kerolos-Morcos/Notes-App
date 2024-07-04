@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
+import 'package:notes_app/widgets/notes_view_body.dart';
 
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
@@ -16,7 +17,7 @@ class _NotesViewState extends State<NotesView> {
         preferredSize: Size.fromHeight(56),
         child: CustomAppBar(),
       ),
-      body: Container(),
+      body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Add A Note',
@@ -28,5 +29,6 @@ class _NotesViewState extends State<NotesView> {
     );
   }
 }
+
 
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -12,21 +13,10 @@ class CustomAppBar extends StatelessWidget {
         'Notes',
         style: TextStyle(fontSize: 25),
       ),
-      actions: [
-        IconButton(
-          tooltip: 'Search A Note',
-          onPressed: () {},
-          icon: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: Colors.grey.shade800,
-                borderRadius: const BorderRadius.all(Radius.circular(50))),
-            child: const Icon(
-              Icons.search,
-            ),
-          ),
-        ),
+      actions: const [
+        CustomSearchIcon(),
       ],
     );
   }
 }
+
