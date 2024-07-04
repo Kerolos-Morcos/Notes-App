@@ -11,10 +11,11 @@ class CustomSearchIcon extends StatelessWidget {
       tooltip: 'Search A Note',
       onPressed: () {},
       icon: Container(
-        padding: const EdgeInsets.all(8),
+        width: 40,
+        height: 40,
         decoration: BoxDecoration(
             color: Colors.grey.shade800,
-            borderRadius: const BorderRadius.all(Radius.circular(50))),
+            borderRadius: const BorderRadius.all(Radius.circular(10))),
         child: const Icon(
           Icons.search,
         ),
