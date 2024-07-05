@@ -7,6 +7,8 @@ class NotesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Container(
+      child: Text('data', style: TextStyle(fontSize: 30),),
+    );
   }
 }

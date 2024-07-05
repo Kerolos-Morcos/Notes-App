@@ -17,7 +17,10 @@ class _NotesViewState extends State<NotesView> {
         preferredSize: Size.fromHeight(56),
         child: CustomAppBar(),
       ),
-      body: const NotesViewBody(),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        child: NotesViewBody(),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Add A Note',
