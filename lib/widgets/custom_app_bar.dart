@@ -8,26 +8,25 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: AppBar(
-         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(1.0),
-          child: Container(
-            margin: const EdgeInsets.only(top: 5, left: 8),
-            color: Colors.grey,
-            height: 1.0,
-            width: 370,
-          ),
+    return AppBar(
+      scrolledUnderElevation: 0,
+      backgroundColor: Colors.black12,
+       bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(1.0),
+        child: Container(
+          margin: const EdgeInsets.only(top: 5),
+          color: Colors.grey,
+          height: 1.0,
+          width: 375,
         ),
-        title: const Text(
-          'Notes',
-          style: TextStyle(fontSize: 25),
-        ),
-        actions: const [
-          CustomSearchIcon(),
-        ],
       ),
+      title: const Text(
+        'Notes',
+        style: TextStyle(fontSize: 25),
+      ),
+      actions: const [
+        CustomSearchIcon(),
+      ],
     );
   }
 }

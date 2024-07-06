@@ -18,7 +18,7 @@ class _NotesViewState extends State<NotesView> {
         child: CustomAppBar(),
       ),
       body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        padding: EdgeInsets.only(left: 15, right: 15, top: 13),
         child: NotesViewBody(),
       ),
       floatingActionButton: FloatingActionButton(

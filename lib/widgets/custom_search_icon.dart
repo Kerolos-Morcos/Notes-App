@@ -8,6 +8,7 @@ class CustomSearchIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      padding: const EdgeInsets.only(right: 15),
       tooltip: 'Search A Note',
       onPressed: () {},
       icon: Container(
