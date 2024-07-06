@@ -8,14 +8,10 @@ class NotesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
+    return ListView.builder(
       physics: const BouncingScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,
-        childAspectRatio: 1.6,
-        mainAxisSpacing: 10,
-      ),
       itemCount: 6,
+      padding: const EdgeInsets.only(bottom: 5),
       itemBuilder: (context, index) {
         return const CustomNoteItem();
       },
