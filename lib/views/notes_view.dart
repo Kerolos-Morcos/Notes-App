@@ -18,7 +18,7 @@ class _NotesViewState extends State<NotesView> {
     return Scaffold(
       appBar: customAppBar(),
       body: notesListView(),
-      floatingActionButton: floatingActionButton(),
+      floatingActionButton: floatingActionButton(context),
     );
   }
 }
