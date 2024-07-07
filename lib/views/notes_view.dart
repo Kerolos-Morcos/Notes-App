@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/custom_app_bar.dart';
-import 'package:notes_app/widgets/notes_list_view.dart';
+import 'package:notes_app/helper/app_bar_helper.dart';
+import 'package:notes_app/helper/floating_action_button_helper.dart';
+import 'package:notes_app/helper/notes_list_view_helper.dart';
 
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
 
+  static const EdgeInsets bodyPadding =
+      EdgeInsets.only(left: 15, right: 15, top: 13);
   @override
   State<NotesView> createState() => _NotesViewState();
 }
@@ -13,25 +16,9 @@ class _NotesViewState extends State<NotesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
-        child: CustomAppBar(),
-      ),
-      body: const Padding(
-        padding: EdgeInsets.only(left: 15, right: 15, top: 13),
-        child: NotesListView(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Add A Note',
-        backgroundColor: Colors.grey.shade800,
-        child: const Icon(
-          Icons.add,
-        ),
-      ),
+      appBar: customAppBar(),
+      body: notesListView(),
+      floatingActionButton: floatingActionButton(),
     );
   }
 }
-
-
-
