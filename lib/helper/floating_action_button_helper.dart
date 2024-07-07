@@ -4,7 +4,9 @@ import 'package:notes_app/widgets/add_note_buttom_sheet.dart';
 FloatingActionButton floatingActionButton(BuildContext context) {
     return FloatingActionButton(
       onPressed: (){
-        showModalBottomSheet(context: context, builder: (context){
+        showModalBottomSheet(
+          context: context,
+          builder: (context){
           return const AddNoteBottomSheet();
         });
       },
