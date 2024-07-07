@@ -6,8 +6,6 @@ import 'package:notes_app/helper/notes_list_view_helper.dart';
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
 
-  static const EdgeInsets bodyPadding =
-      EdgeInsets.only(left: 15, right: 15, top: 13);
   @override
   State<NotesView> createState() => _NotesViewState();
 }
