@@ -21,17 +21,20 @@ class CustomNoteItem extends StatelessWidget {
               maxLines: 1,
               'Flutter tips',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 24,
                 color: Colors.black,
               ),
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.only(top: 16, bottom: 16,),
+              padding: const EdgeInsets.only(
+                top: 16,
+                bottom: 14,
+              ),
               child: Text(
-                'Build your career with Tharwat Samy',
+                'Build your career with Kerolos Morcos',
                 maxLines: 2,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.black.withOpacity(0.5),
                 ),
               ),
@@ -42,7 +45,7 @@ class CustomNoteItem extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(
                 FontAwesomeIcons.trash,
-                size: 24,
+                size: 23,
                 color: Colors.black,
               ),
             ),
@@ -54,7 +57,7 @@ class CustomNoteItem extends StatelessWidget {
               maxLines: 1,
               style: TextStyle(
                 color: Colors.black.withOpacity(0.4),
-                fontSize: 16,
+                fontSize: 15,
               ),
             ),
           ),

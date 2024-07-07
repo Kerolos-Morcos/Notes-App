@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
-import 'package:notes_app/widgets/notes_view_body.dart';
+import 'package:notes_app/widgets/notes_list_view.dart';
 
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
@@ -19,7 +19,7 @@ class _NotesViewState extends State<NotesView> {
       ),
       body: const Padding(
         padding: EdgeInsets.only(left: 15, right: 15, top: 13),
-        child: NotesViewBody(),
+        child: NotesListView(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
