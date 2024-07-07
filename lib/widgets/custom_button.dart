@@ -7,14 +7,13 @@ class CustomButton extends StatelessWidget {
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         Feedback.forTap(context);
         if (onTap != null) {
           onTap!();
         }
       },
-      borderRadius: BorderRadius.circular(8),
       child: buttonBody(buttonText),
     );
   }
