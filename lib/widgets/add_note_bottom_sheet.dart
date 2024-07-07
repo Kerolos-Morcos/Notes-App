@@ -16,14 +16,17 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   Widget build(BuildContext context) {
     return const Padding(
       padding: AddNoteBottomSheet._bottomSheetBodyPadding,
-      child: Column(
-        children: [
-          CustomTextField(hintText: 'Title'),
-          SizedBox(height: 16),
-          CustomTextField(hintText: 'Content', maxLines: 5),
-          SizedBox(height: 24),
-          CustomButton(buttonText: 'Add Note'),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomTextField(hintText: 'Title'),
+            SizedBox(height: 16),
+            CustomTextField(hintText: 'Content', maxLines: 5),
+            SizedBox(height: 24),
+            CustomButton(buttonText: 'Add Note'),
+            SizedBox(height: 24),
+          ],
+        ),
       ),
     );
   }

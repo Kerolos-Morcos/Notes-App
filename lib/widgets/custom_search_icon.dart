@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-class CustomSearchIcon extends StatelessWidget {
-  const CustomSearchIcon({
-    super.key,
+class CustomAppBarIcon extends StatelessWidget {
+  const CustomAppBarIcon({
+    super.key, required this.tooltip, required this.icon,
   });
-
+  final String tooltip;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return IconButton(
       padding: const EdgeInsets.only(right: 15),
-      tooltip: 'Search A Note',
+      tooltip: tooltip,
       onPressed: () {},
       icon: Container(
         width: 40,
@@ -17,8 +18,8 @@ class CustomSearchIcon extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.grey.shade800,
             borderRadius: const BorderRadius.all(Radius.circular(10))),
-        child: const Icon(
-          Icons.search,
+        child: Icon(
+          icon,
         ),
       ),
     );
