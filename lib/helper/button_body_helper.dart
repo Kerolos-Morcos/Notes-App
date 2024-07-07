@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
-Container buttonBody(String buttonText) {
+Container buttonBody(BuildContext context, String buttonText) {
     return Container(
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       height: 60,
       alignment: Alignment.center,
       decoration: BoxDecoration(

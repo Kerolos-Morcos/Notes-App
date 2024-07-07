@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
           onTap!();
         }
       },
-      child: buttonBody(buttonText),
+      child: buttonBody(context, buttonText),
     );
   }
 }
