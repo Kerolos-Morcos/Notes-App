@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
-InputDecoration inputDecoration([String? hintText, double? contentPadding]) {
+InputDecoration inputDecoration([String? hintText]) {
   return InputDecoration(
     fillColor: Colors.white,
     border: outlineInputBorder(),
@@ -9,10 +9,6 @@ InputDecoration inputDecoration([String? hintText, double? contentPadding]) {
     focusedBorder: outlineInputBorder(kPrimaryColor),
     hintText: hintText,
     hintStyle: const TextStyle(color: kPrimaryColor),
-    contentPadding: EdgeInsets.symmetric(
-      horizontal: 12,
-      vertical: contentPadding ?? 16,
-    ),
   );
 }
 

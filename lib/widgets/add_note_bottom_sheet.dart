@@ -19,7 +19,7 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
         children: [
           CustomTextField(hintText: 'Title'),
           SizedBox(height: 16),
-          CustomTextField(hintText: 'Content', contentPadding: 65),
+          CustomTextField(hintText: 'Content', maxLines: 5,),
           SizedBox(height: 24),
           CustomButton(buttonText: 'Add Note'),
         ],
