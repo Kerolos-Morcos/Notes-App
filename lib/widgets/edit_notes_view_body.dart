@@ -4,10 +4,10 @@ import 'package:notes_app/widgets/custom_text_field.dart';
 class EditNoteViewBody extends StatelessWidget {
   const EditNoteViewBody({
     super.key,
-    required EdgeInsets editNotesViewPadding,
-  }) : _editNotesViewPadding = editNotesViewPadding;
+  });
 
-  final EdgeInsets _editNotesViewPadding;
+  static const _editNotesViewPadding =
+      EdgeInsets.only(top: 50, right: 16, left: 16);
 
   @override
   Widget build(BuildContext context) {

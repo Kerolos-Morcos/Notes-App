@@ -5,8 +5,7 @@ import 'package:notes_app/widgets/edit_notes_view_body.dart';
 class EditNoteView extends StatelessWidget {
   const EditNoteView({super.key});
   static const id = 'EditNoteView';
-  static const _editNotesViewPadding =
-      EdgeInsets.only(top: 50, right: 16, left: 16);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,9 +16,7 @@ class EditNoteView extends StatelessWidget {
         automaticallyImplyLeading: false,
         tooltip: 'Save Edits',
       ),
-      body: const EditNoteViewBody(
-        editNotesViewPadding: _editNotesViewPadding,
-      ),
+      body: const EditNoteViewBody(),
     );
   }
 }
