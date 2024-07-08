@@ -3,14 +3,20 @@ import 'package:notes_app/widgets/custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
-    super.key, required this.title,
+    super.key, required this.title, required this.icon, required this.appBarBottomLineOpacity, required this.automaticallyImplyLeading, required this.tooltip,
   });
   final String title;
+  final IconData icon;
+  final double appBarBottomLineOpacity;
+  final bool automaticallyImplyLeading;
+  final String tooltip;
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: automaticallyImplyLeading,
       scrolledUnderElevation: 0,
       backgroundColor: Colors.black12,
+      bottomOpacity: appBarBottomLineOpacity,
        bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1.0),
         child: Container(
@@ -24,8 +30,8 @@ class CustomAppBar extends StatelessWidget {
         title,
         style: const TextStyle(fontSize: 25),
       ),
-      actions: const [
-        CustomAppBarIcon(icon: Icons.search, tooltip: 'Search A Note',),
+      actions: [
+        CustomAppBarIcon(icon: icon, tooltip: tooltip,),
       ],
     );
   }
