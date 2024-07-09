@@ -1,7 +1,7 @@
 class NoteModel {
   final String title;
   final String subTitle;
-  final DateTime date;
+  final String date;
   final int color;
 
   NoteModel({
@@ -16,7 +16,7 @@ class NoteModel {
       color: json['color'],
       title: json['title'],
       subTitle: json['subTitle'],
-      date: DateTime.parse(json['date']),
+      date: DateTime.parse(json['date']).toString(),
     );
   }
 }
