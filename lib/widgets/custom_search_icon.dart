@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomAppBarIcon extends StatelessWidget {
   const CustomAppBarIcon({
-    super.key, required this.tooltip, required this.icon,
+    super.key,
+    required this.tooltip,
+    required this.icon,
   });
   final String tooltip;
   final IconData icon;

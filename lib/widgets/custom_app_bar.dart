@@ -3,7 +3,12 @@ import 'package:notes_app/widgets/custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
-    super.key, required this.title, required this.icon, required this.appBarBottomLineOpacity, required this.automaticallyImplyLeading, required this.tooltip,
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.appBarBottomLineOpacity,
+    required this.automaticallyImplyLeading,
+    required this.tooltip,
   });
   final String title;
   final IconData icon;
@@ -17,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
       scrolledUnderElevation: 0,
       backgroundColor: Colors.black12,
       bottomOpacity: appBarBottomLineOpacity,
-       bottom: PreferredSize(
+      bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1.0),
         child: Container(
           margin: const EdgeInsets.only(top: 5),
@@ -31,9 +36,11 @@ class CustomAppBar extends StatelessWidget {
         style: const TextStyle(fontSize: 25),
       ),
       actions: [
-        CustomAppBarIcon(icon: icon, tooltip: tooltip,),
+        CustomAppBarIcon(
+          icon: icon,
+          tooltip: tooltip,
+        ),
       ],
     );
   }
 }
-

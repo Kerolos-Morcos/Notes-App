@@ -21,7 +21,7 @@ class NotesApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: 'Poppins',
       ),
-      initialRoute:  NotesView.id,
+      initialRoute: NotesView.id,
     );
   }
 }
