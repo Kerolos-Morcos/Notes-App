@@ -4,7 +4,7 @@ void showSnackBar(BuildContext context, String message,
       {MaterialColor? backgroundColor}) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(message),
+        content: Text(message, style: const TextStyle(color: Colors.white),),
         backgroundColor: backgroundColor,
         behavior: SnackBarBehavior.fixed,
         elevation: 10,
