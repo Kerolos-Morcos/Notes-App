@@ -20,27 +20,32 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AddNoteBottomSheet._bottomSheetBodyPadding,
-      child: SingleChildScrollView(
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(
-          listener: (context, state) {
-            if (state is AddNoteSuccess) {
-              showSnackBar(context, 'Note Added Successfully !', backgroundColor: Colors.green);
-              Navigator.pop(context);
-            }
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: Padding(
+        padding: AddNoteBottomSheet._bottomSheetBodyPadding,
+        child: SingleChildScrollView(
+          child: BlocConsumer<AddNoteCubit, AddNoteState>(
+            listener: (context, state) {
+              if (state is AddNoteSuccess) {
+                showSnackBar(context, 'Note Added Successfully !',
+                    backgroundColor: Colors.green);
+                Navigator.pop(context);
+              }
 
-            if (state is AddNoteFailure) {
-              log('failed ${state.errorMessage}');
-              showSnackBar(context, 'Something Went Wrong, Try Again !', backgroundColor: Colors.red);
-            }
-          },
-          builder: (context, state) {
-            return ModalProgressHUD(
-              inAsyncCall: state is AddNoteLoading? true : false,
-              child: const AddNoteForm(),
-            );
-          },
+              if (state is AddNoteFailure) {
+                log('failed ${state.errorMessage}');
+                showSnackBar(context, 'Something Went Wrong, Try Again !',
+                    backgroundColor: Colors.red);
+              }
+            },
+            builder: (context, state) {
+              return ModalProgressHUD(
+                inAsyncCall: state is AddNoteLoading ? true : false,
+                child: const AddNoteForm(),
+              );
+            },
+          ),
         ),
       ),
     );
