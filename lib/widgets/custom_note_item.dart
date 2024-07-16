@@ -15,9 +15,9 @@ class CustomNoteItem extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(bottom: 8),
         padding: const EdgeInsets.only(top: 24, bottom: 24, left: 14),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          color: Color(0xffFFCC80),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          color: Color(noteModel.color),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -58,7 +58,7 @@ class CustomNoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 26),
               child: Text(
-                'May 21, 2016',
+                noteModel.date,
                 maxLines: 1,
                 style: TextStyle(
                   color: Colors.black.withOpacity(0.4),

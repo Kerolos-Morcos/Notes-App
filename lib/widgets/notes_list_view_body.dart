@@ -26,7 +26,6 @@ class _NotesListViewBodyState extends State<NotesListViewBody> {
       builder: (context, state) {
         List<NoteModel> notes = BlocProvider.of<GetNotesCubit>(context).notes!;
         return ListView.builder(
-          reverse: true,
           physics: const BouncingScrollPhysics(),
           itemCount: notes.length,
           padding: const EdgeInsets.only(bottom: 5),
