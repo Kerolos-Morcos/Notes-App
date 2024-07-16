@@ -18,7 +18,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subTitle;
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -45,6 +44,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             builder: (context, state) {
               return CustomButton(
                 buttonText: 'Add Note',
+                isLoading: state is AddNoteLoading ? true : false,
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();

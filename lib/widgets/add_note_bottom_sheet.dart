@@ -37,10 +37,13 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
           }
         },
         builder: (context, state) {
-          return const Padding(
-            padding: AddNoteBottomSheet._bottomSheetBodyPadding,
-            child: SingleChildScrollView(
-              child: AddNoteForm(),
+          return AbsorbPointer(
+            absorbing: state is AddNoteLoading ? true : false,
+            child: const Padding(
+              padding: AddNoteBottomSheet._bottomSheetBodyPadding,
+              child: SingleChildScrollView(
+                child: AddNoteForm(),
+              ),
             ),
           );
         },
