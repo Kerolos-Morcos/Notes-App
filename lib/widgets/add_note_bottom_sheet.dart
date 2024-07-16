@@ -8,8 +8,6 @@ import 'package:notes_app/widgets/add_note_form.dart';
 
 class AddNoteBottomSheet extends StatefulWidget {
   const AddNoteBottomSheet({super.key});
-  static const _bottomSheetBodyPadding =
-      EdgeInsets.only(top: 50, right: 20, left: 20);
 
   @override
   State<AddNoteBottomSheet> createState() => _AddNoteBottomSheetState();
@@ -17,9 +15,14 @@ class AddNoteBottomSheet extends StatefulWidget {
 
 class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   bool isLoading = false;
-
   @override
   Widget build(BuildContext context) {
+    var bottomSheetBodyPadding = EdgeInsets.only(
+      top: 50,
+      right: 20,
+      left: 20,
+      bottom: MediaQuery.of(context).viewInsets.bottom,
+    );
     return BlocProvider(
       create: (context) => AddNoteCubit(),
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
@@ -39,9 +42,9 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
         builder: (context, state) {
           return AbsorbPointer(
             absorbing: state is AddNoteLoading ? true : false,
-            child: const Padding(
-              padding: AddNoteBottomSheet._bottomSheetBodyPadding,
-              child: SingleChildScrollView(
+            child: Padding(
+              padding: bottomSheetBodyPadding,
+              child: const SingleChildScrollView(
                 child: AddNoteForm(),
               ),
             ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_note_item.dart';
 
-class NotesListView extends StatelessWidget {
-  const NotesListView({
+class NotesListViewBody extends StatelessWidget {
+  const NotesListViewBody({
     super.key,
   });
 

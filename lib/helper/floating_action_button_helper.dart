@@ -5,10 +5,12 @@ FloatingActionButton floatingActionButton(BuildContext context) {
   return FloatingActionButton(
     onPressed: () {
       showModalBottomSheet(
-          context: context,
-          builder: (context) {
-            return const AddNoteBottomSheet();
-          });
+        isScrollControlled: true,
+        context: context,
+        builder: (context) {
+          return const AddNoteBottomSheet();
+        },
+      );
     },
     tooltip: 'Add A Note',
     backgroundColor: Colors.grey.shade800,
