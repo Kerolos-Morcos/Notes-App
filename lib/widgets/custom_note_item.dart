@@ -47,7 +47,9 @@ class CustomNoteItem extends StatelessWidget {
               trailing: IconButton(
                 padding: EdgeInsets.zero,
                 alignment: Alignment.centerRight,
-                onPressed: () {},
+                onPressed: () {
+                  noteModel.delete();
+                },
                 icon: const Icon(
                   FontAwesomeIcons.trash,
                   size: 23,
