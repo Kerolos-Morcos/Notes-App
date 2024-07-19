@@ -9,12 +9,14 @@ class CustomAppBar extends StatelessWidget {
     required this.appBarBottomLineOpacity,
     required this.automaticallyImplyLeading,
     required this.tooltip,
+    required this.onPressed,
   });
   final String title;
   final IconData icon;
   final double appBarBottomLineOpacity;
   final bool automaticallyImplyLeading;
   final String tooltip;
+  final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -37,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
       ),
       actions: [
         CustomAppBarIcon(
-          onPressed: (){},
+          onPressed: onPressed,
           icon: icon,
           tooltip: tooltip,
         ),

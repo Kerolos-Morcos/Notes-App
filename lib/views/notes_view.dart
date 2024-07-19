@@ -11,6 +11,7 @@ class NotesView extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: customAppBar(
+        onPressed: () {},
         title: 'Notes',
         icon: Icons.search,
         tooltip: 'Search A Note',
