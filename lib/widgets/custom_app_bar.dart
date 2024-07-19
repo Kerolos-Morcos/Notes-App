@@ -37,6 +37,7 @@ class CustomAppBar extends StatelessWidget {
       ),
       actions: [
         CustomAppBarIcon(
+          onPressed: (){},
           icon: icon,
           tooltip: tooltip,
         ),
