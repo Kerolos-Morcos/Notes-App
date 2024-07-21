@@ -1,4 +1,6 @@
+import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
@@ -21,11 +23,67 @@ class EditNoteViewBody extends StatefulWidget {
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   String? title, subTitle;
+  late Color currentColor;
+
+  @override
+  void initState() {
+    super.initState();
+    currentColor = Color(widget.noteModel.color);
+  }
+
+  Future<void> showPicker() async {
+    final initialColor = currentColor;
+    final colorChanged = await ColorPicker(
+      showColorName: true,
+      color: currentColor,
+      onColorChanged: (Color color) {
+        setState(() {
+          currentColor = color;
+        });
+      },
+    ).showPickerDialog(context);
+
+    if (colorChanged != true) {
+      setState(() {
+        currentColor = initialColor;
+      });
+    } else {
+      widget.noteModel.color = currentColor.value;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
       padding: EditNoteViewBody._editNotesViewPadding,
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Pick A New Color !',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: showPicker,
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(kPrimaryColor),
+              ),
+              child: const Text(
+                'Pick',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
         CustomTextField(
           hintText: widget.noteModel.title,
           onChanged: widget.onTitleChanged,
