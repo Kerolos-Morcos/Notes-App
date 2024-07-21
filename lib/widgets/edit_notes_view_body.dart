@@ -43,13 +43,11 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
       },
     ).showPickerDialog(context);
 
-    if (colorChanged != true) {
-      setState(() {
-        currentColor = initialColor;
-      });
-    } else {
-      widget.noteModel.color = currentColor.value;
-    }
+    colorChanged != true
+        ? setState(() {
+            currentColor = initialColor;
+          })
+        : widget.noteModel.color = currentColor.value;
   }
 
   @override
@@ -57,30 +55,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
     return ListView(
       padding: EditNoteViewBody._editNotesViewPadding,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              'Pick A New Color !',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            ElevatedButton(
-              onPressed: showPicker,
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(kPrimaryColor),
-              ),
-              child: const Text(
-                'Pick',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ],
-        ),
+        buildColorPicker(),
         const SizedBox(
           height: 20,
         ),
@@ -95,6 +70,33 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           hintText: widget.noteModel.subTitle,
           maxLines: 6,
           onChanged: widget.onSubTitleChanged,
+        ),
+      ],
+    );
+  }
+
+  Row buildColorPicker() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const Text(
+          'Pick A New Color !',
+          style: TextStyle(
+            fontSize: 18,
+          ),
+        ),
+        ElevatedButton(
+          onPressed: showPicker,
+          style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.all(kPrimaryColor),
+          ),
+          child: const Text(
+            'Pick',
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.black,
+            ),
+          ),
         ),
       ],
     );
