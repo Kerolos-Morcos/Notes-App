@@ -25,14 +25,20 @@ class _NotesListViewBodyState extends State<NotesListViewBody> {
     return BlocBuilder<GetNotesCubit, GetNotesState>(
       builder: (context, state) {
         List<NoteModel> notes = BlocProvider.of<GetNotesCubit>(context).notes!;
-        return ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemCount: notes.length,
-          padding: const EdgeInsets.only(bottom: 5),
-          itemBuilder: (context, index) {
-            return CustomNoteItem(noteModel: notes[index],);
-          },
-        );
+        return notes.isEmpty
+            ? const Center(
+                child: Text('No Notes Yet !', style: TextStyle(fontSize: 24)),
+              )
+            : ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: notes.length,
+                padding: const EdgeInsets.only(bottom: 5),
+                itemBuilder: (context, index) {
+                  return CustomNoteItem(
+                    noteModel: notes[index],
+                  );
+                },
+              );
       },
     );
   }
