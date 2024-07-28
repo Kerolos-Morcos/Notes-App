@@ -3,7 +3,11 @@ import 'package:notes_app/helper/button_body_helper.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;
-  const CustomButton({super.key, required this.buttonText, this.onTap, this.isLoading = false});
+  const CustomButton(
+      {super.key,
+      required this.buttonText,
+      this.onTap,
+      this.isLoading = false});
   final VoidCallback? onTap;
   final bool isLoading;
   @override
@@ -18,5 +22,4 @@ class CustomButton extends StatelessWidget {
       child: buttonBody(context, isLoading, buttonText),
     );
   }
-
 }

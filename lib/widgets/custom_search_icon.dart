@@ -4,7 +4,8 @@ class CustomAppBarIcon extends StatelessWidget {
   const CustomAppBarIcon({
     super.key,
     required this.tooltip,
-    required this.icon, required this.onPressed,
+    required this.icon,
+    required this.onPressed,
   });
   final String tooltip;
   final IconData icon;
