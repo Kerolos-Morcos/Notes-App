@@ -14,7 +14,7 @@ class SplashScreenAnimated extends StatelessWidget {
         children: [
           Expanded(
             child: Lottie.asset(
-              'lib/assets/animations/logo.json',
+              'assets/animations/logo.json',
               fit: BoxFit.fitWidth,
             ),
           ),
